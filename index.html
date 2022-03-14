@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bw - Web Music</title>
+    <title>Bw - Music Online</title>
     <style>
         *{
             margin: 0;
@@ -20,7 +20,7 @@
             height: 100vh;
             overflow: hidden;
         }
-        .black{
+        .black, #black{
             position: absolute;
             z-index: 2;
             width: 100%;
@@ -30,6 +30,11 @@
             display: flex;
             justify-content: center;
             align-items: center;
+        }
+        
+        #black{
+            z-index: 3;
+            cursor: pointer;
         }
         .cont{
             width: calc(100% - 10px);
@@ -76,17 +81,20 @@
 </head>
 <body>
     <div id="content">
+        <div onclick="start(this)" id="black">
+            <h1 class="title">Click to start</h1>           
+        </div>
         <div class="black">
             <div class="cont">
                 <img src="animes/kimetsu/img.jpg">
                 <div class="infos">
                     <h1 class="title">Kimetsu no Yaiba</h1>
-                    <h2 class="sub-title">BW - Web Music</h1>
+                    <h2 class="sub-title">BW - Lofi Animes</h2>
                 </div>
             </div>            
         </div>
-        <video src="animes/kimetsu/video.webm" autoplay loop></video>
-        <audio src="animes/kimetsu/music.mp3" autoplay loop></audio>
+        <video src="animes/kimetsu/video.webm" loop></video>
+        <audio src="animes/kimetsu/music.mp3" loop></audio>
     </div>    
 
 
@@ -103,16 +111,23 @@
         }
 
         let time;
-        const monitor = setInterval(()=>{
-            audio.playbackRate = video.playbackRate;
-            if(video.currentTime == time){  
-                pauseA();
-            } else {
-                playA();
-            }
-
-            time = video.currentTime;
-        },200)
+        
+        
+        
+        const start = (e)=> {
+            e.style.display = "none";
+            video.play();
+            const monitor = setInterval(()=>{
+                audio.playbackRate = video.playbackRate;
+                if(video.currentTime == time){  
+                    pauseA();
+                } else {
+                    playA();
+                }
+    
+                time = video.currentTime;
+            },200)
+        }
     </script>
 </body>
 </html>
