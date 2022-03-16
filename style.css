@@ -63,6 +63,25 @@ img{
     border-radius: 5px;
 }
 
+.bt{
+    position: absolute;
+    color: white;
+    font-weight: bolder;
+    transition: all .3s;
+    bottom: 0;
+    font-size: 50px;
+    z-index: 10;
+    background: none;
+    margin: 10px;
+    cursor: pointer;
+}
+.bef{
+    left: 0;
+}
+.nex{
+    right: 0;
+}
+
 @media screen and (max-width: 540px){
     .cont{
         flex-direction: column;
