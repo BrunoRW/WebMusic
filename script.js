@@ -8,9 +8,11 @@ const title = document.querySelector("h2");
 
 let time;
 let monitor;
+let current = localStorage.currentPlaying;
 
-let current = 0;
-
+if(!current){
+    current = 0;
+}
 
 const playA = ()=> {
     audio.play();
@@ -20,7 +22,15 @@ const pauseA = ()=> {
     audio.pause();
 }
 
-const playNow = ()=> {
+const playNow = (e)=> {
+    if(e){
+        e.style.display = "none";
+    }
+    
+    
+    localStorage.currentPlaying = current;
+    
+    
     let urlMp3   = `https://brunowotzke.ga/-PROJ-/music/songs/${songs[current]}/${songs[current]}.mp3`;
     let urlJpg   = `https://brunowotzke.ga/-PROJ-/music/songs/${songs[current]}/${songs[current]}.jpg`;
     let urlWebm = `https://brunowotzke.ga/-PROJ-/music/songs/${songs[current]}/${songs[current]}.webm`;
@@ -47,8 +57,6 @@ const playNow = ()=> {
     
     console.log(`Current: ${current + 1}\nMax: ${songs.length}`)
 }
-
-playNow();
 
 
 const next = ()=>{
