@@ -6,6 +6,9 @@
     border: none;
     font-family: system-ui;
 }
+body{
+    background: #000;
+}
 #content{
     position: relative;
     width: 100vw;
@@ -14,7 +17,7 @@
 }
 .black, #black{
     position: absolute;
-    z-index: 2;
+    z-index: 150;
     width: 100%;
     height: 100%;
     background: #00000070;
