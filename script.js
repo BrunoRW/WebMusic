@@ -1,5 +1,5 @@
-const songs = ["kimetsu","rickAni"];
-const titles = ["Kimetsu No Yaiba", "Rick Anime"];
+const songs = ["kimetsu","major","rickAni"];
+const titles = ["Kimetsu Lofi","Major OP.6" ,"Rick Anime"];
 
 const video = document.querySelector("video");
 const audio = document.querySelector("audio");
