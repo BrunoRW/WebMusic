@@ -5,7 +5,7 @@ const playA = ()=> {
     audio.play();
 }
 
-const pauseA = ()=> {
+const pauseA = ()=> { 
     audio.pause();
 }
 
